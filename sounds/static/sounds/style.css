@@ -1,0 +1,221 @@
+body {
+    font-family: 'Ubuntu', serif;
+    font-size: 15px;
+  }
+
+.navbar{
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: #35424a;
+    color:#fff;
+    padding: 1% 0;
+    font-size: 1.2em;
+    border:0;
+}
+
+.navbar-brand{
+    float: left;
+    min-height: 55px;
+}
+
+.navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover{
+    color: #fff;
+    background-color: #5E4485;
+}
+
+.navbar-inverse .navbar-nav li a{
+    color: #D5D5D5;
+}
+
+.carousel-caption{
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.decor{
+    color:#e84914;
+}
+ul{
+    margin:0;
+    padding:0;
+}
+
+.button_1{
+    height: 38px;
+    background: #e84914;
+    border:0;
+    padding-left: 20px;
+    padding-right: 20px;
+    color:#ffffff;
+}
+
+.container{
+    width:80%;
+    margin:auto;
+    overflow: hidden;
+}
+
+.welcome{
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    margin-top: 10px;
+    
+    
+}
+
+.tinted-image {
+    background: 
+      /* top, transparent red */
+      linear-gradient(
+        rgba(73,78,104, 0.90),
+        rgba(73,78,104, 0.90)
+      ),
+      /* your image */
+      url('/static/sounds/ywala.jpg');
+      color: #ffffff;
+  }
+.buts{
+    background: #e84914;
+}
+.bfoot{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.btn{
+    font-size: 18px;
+    color: #fff;
+    padding: 12px 22px;
+    background-color: #35424a;
+    border: 2px solid #e84914;
+    margin-bottom: 10px;
+    margin-top: 25px;
+    border-radius:10px;
+}
+
+.contact-forms{
+    width:30%;
+    margin: auto;
+}
+
+#myblog {
+    overflow: hidden;
+    text-overflow: clip;
+    height: 150px;
+}
+
+
+#audio a{
+    text-decoration: none;
+    color:#35424a;
+}
+
+#audio {
+    width: 70%;
+    margin: auto;
+    
+}
+
+.letter {
+    padding:15px;
+    color:#ffffff;
+    background-color: #35424a;
+}
+
+.data{
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.container-bottom{
+    width: 80%;
+    margin: auto;
+}
+
+.fa{
+    color: #fff;
+    padding: 5px 10px 10px 10px;
+    font-size: 18px;
+}
+
+
+.fa a:hover{
+    color: #35424a;
+}
+
+.container-about{
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.detail-container{
+    width: 80%;
+    margin: auto;
+    padding: 30px;
+}
+
+footer {
+background: #35424a;
+margin-top: 0px;
+text-align: center;
+color: #ffffff;
+padding: 10px;
+
+}
+
+#blogpost{
+     background: #f4f4f4;
+}
+    
+#events{
+    width: 80%;
+    margin: auto;
+    
+}
+
+#afoot a{
+    text-decoration: none;
+    color: #fff
+}
+
+#afoot a:hover{
+    font-size: 20px;
+}
+
+.work{
+    width: 35%;
+    margin: auto;
+    text-align: center;
+}
+
+
+@media (max-width:600px){
+    .carousel-caption{
+        display:none;
+    }
+
+    #icon{
+        max-width: 150px;
+    }
+
+    .contact-forms{
+        width:80%;
+        margin: auto;
+    }
+
+    .work{
+        width: 80%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .detail-container{
+        width: 95%;
+        margin: auto;
+        padding: 30px;
+    }
+    
+}

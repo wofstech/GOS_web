@@ -1,0 +1,18 @@
+{% extends 'base_generic.html' %}
+
+
+{% block content %}
+{% load static %}
+{% load bootstrap3 %}
+<link rel='stylesheet' href='{% static "sounds/style.css" %}'>
+<div class='work'>
+        <strong></strong><h2 style="font-family: 'Tangerine', serif; font-size: 58px; color:#5E4485;">All Articles</h2></strong>
+        {% for post in post_list %}
+                <div class='blogpost'>
+                    <h3><strong><a style="font-family: 'Ubuntu', serif; font-size: 20px;" href="{{ post.get_absolute_url }}">{{ post.title }}</strong></h3></a>
+                    <h4 style="font-family: 'Ubuntu:italic', serif; font-size: 20px;">{{ post.date }}</h4>
+                    <hr style='border-color:#35424a;'>
+                </div>
+        {% endfor %}
+    </div>
+{% endblock %}
