@@ -75,17 +75,7 @@ ul{
     margin: auto;
 }
 
-.tinted-image {
-    background: 
-      /* top, transparent red */
-      linear-gradient(
-        rgba(73,78,104, 0.90),
-        rgba(73,78,104, 0.90)
-      ),
-      /* your image */
-      url('/static/sounds/ywala.jpg');
-      color: #ffffff;
-  }
+
 
   #showcase{
     background-image:url('/static/sounds/cover3.jpg');
