@@ -1,27 +1,19 @@
 from django.shortcuts import render, redirect
-from sounds.models import Post
+from sounds.models import Post, AudioMessages
 from sounds.forms import  SubForm, ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views import generic
 
 def index(request):
-    post = Post.objects.all()[:3]
+    post = Post.objects.all()[:6]
+    audio = AudioMessages.objects.all()[:6]
     context = {
         'title': 'Recent Posts',
         'post': post,
+        'audio': audio
     }
-
-    if request.method == "POST":
-        form = SubForm(request.POST)
-        if form.is_valid():
-            Subscribe = form.save(commit=False)
-            Subscribe.save()
-            return redirect('index', )
-    else:
-        form = SubForm()
-    return render(request, 'sounds/index.html', {'form': form, 'title': 'Recent Posts',
-        'post': post, })
+    return render(request, 'sounds/index.html', context)
 
 
 def about(request):
@@ -51,6 +43,13 @@ class PostListView(generic.ListView):
     model = Post
     paginate_by = 10
 
-
 class PostDetailView(generic.DetailView):
     model = Post
+
+
+def resources(request):
+    post = Post.objects.all()[:7]
+    context = {
+        'post': post,
+    }
+    return render(request, 'sounds/resources.html', context)

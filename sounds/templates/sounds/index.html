@@ -1,68 +1,212 @@
 
-{% extends 'base_generic.html' %}
-
-
-{% block content %}
-{% load static %}
-{% load bootstrap3 %}
-<link rel='stylesheet' href='{% static "sounds/style.css" %}'>
-   
-
-
-     <div class='welcome'>
-        <h2 style="font-family: 'Tangerine', serif; font-size: 50px; color:#e8491d; text-align:center;">Welcome to Gate of Sounds</h2>
-        <div class='row'>
-            <div class='col-md-6'>
-                
-                <p style='font-size: 20px;'>Gate of Sounds is an Apostolic Centre for a Kingdomic Embassy; Equipping the body of Christ by heavenly sounds of Worship and wisdom Relevant for all spheres of Administration in keeping to God's times and seasons</p>
-                <p style='font-size: 20px;'>Gate of Sounds is an Apostolic Centre for a Kingdomic Embassy; Equipping the body of Christ by heavenly sounds of Worship and wisdom Relevant for all spheres of Administration in keeping to God's times and seasons</p>
-                <button type='button' class='btn btn-default'>Read More</button>
-            </div>
-            <div class='col-md-6'>
-                <img src="{% static 'sounds/logo33.jpg' %}"  class='img-responsive' height="250" width="450">
-            </div>
-        </div>
-        <hr style='border-color:#35424a; border-width: 3px'>
-    </div>
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
 
-     <div class='container-bottom'>
-         <div class = 'trial'>
-             <h1 style="font-family: 'Tangerine', serif; font-size: 58px; color:#e8491d; text-align:center;">Articles</h1>
-             
-             {% for posts in post %}
-             <div id='myblog'>
-                <h3>{{ posts.title }}</h1>
-                <h4>{{ posts.date }}</h4>
-                <p>{{ posts.body }}</p>
-            </div>
-            <button type='button' class='btn btn-default'>Continue Reading</button>
-            <hr style='border-color:#35424a;'>
-             {% endfor %}
-            <div class='text-center'><button type='button' class='btn btn-default'>View Older Posts</button></div> 
-             <hr style='border-color:#35424a; border-width: 3px'>
-         </div>  
-    </div>
 
-    <div  class='text-center' id='audio'>
-            <h2 style="font-family: 'Tangerine', serif; font-size: 58px; color: #e8491d;">Audios</h2>
-            <h3 ><a style="font-family: 'Ubuntu', serif; font-size: 20px;" href='#'>Altars and Throne Powers</a></h3>
-            <h3 ><a style="font-family: 'Ubuntu', serif; font-size: 20px;" href='#'>Benue Cry</a></h3>
-            <h3 ><a style="font-family: 'Ubuntu', serif; font-size: 20px;" href='#'>Systems of Princes in Benue</a></h3>
-            <h3 ><a style="font-family: 'Ubuntu', serif; font-size: 20px;" href='#'>Benue at 42</a></h3>
-            <h3 ><a style="font-family: 'Ubuntu', serif; font-size: 20px;" href='#'>Throne Worship</a></h3>
-            <button type='button' class='btn btn-default'>view more</button>
-            
-    </div>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:italic">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="main.js"></script>
+	
+	<link rel='stylesheet' href='{% static "sounds/style.css" %}'>
+</head>
+<body>
+	<section id='showcase'>
+		<nav class='navbar navbar-inverse' style='background:transparent'>
+			<div class='container-fluid'>
+					<div class='navbar-header'>
+							<button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#MyNavBar'>
+								<span class='icon-bar' style='color:#fff'></span>
+								<span class='icon-bar' style='color:#fff'></span>
+								<span class='icon-bar' style='color:#fff'></span>
+							</button>
+							<a  class='navbar-brand' style="font-family: 'Tangerine', serif; font-size: 48px; color:#ffffff;" href='{% url "index" %}'>Gate of Sounds</a>
+					</div>
+					<div class='collapse navbar-collapse'  id='MyNavBar'> 
+						<ul class='nav navbar-nav navbar-right' style="font-size: 20px; color:white">
+							<li ><a href='#'>Home</a></li>
+							<li><a href='#'>Resources</a></li>
+							<li><a href='#'>Contact</a></li>
+							<li><a href='#'>About</a></li>
+						</ul>
+					</div>
+			</div>
+		</nav>
+		
+				<div class ='text-center' id='innershow'>
+					<p class='search-text' style="font-family:Open Sans Condensed; font-size:35px">Are You Looking for a Particular Post? Search For a Post Below</p><br>
+					<div class='searchme'>
+						<form class="example" action="action_page.php">
+								<input type="text" placeholder="Search.." name="search">
+								<button type="submit" class='butse'><i class="fa fa-search"></i></button>
+						</form>
+						<br>
+						<img src='{% static "sounds/facebook.png" %}' class='social-me' height="100px" width="100px">
+						<img src='{% static "sounds/twitter.png" %}' class='social-me' height="100px" width="100px">
+						<img src='{% static "sounds/yt2.png" %}'class='social-me' height="100px" width="100px" >
+					</div>
+				</div>
+		
+				
+	</section>
+	<section id='entireshow'>
+		<div class='showme'>
+		
+				<div class='welcome' >
+					<p style="color:#666666; padding-top:15px; font-size:25px"   class='text-center'><strong>Welcome to Gate of Sounds</strong></p><br>
+					<br>
+					<div class='row'>
+						<div class='col-md-6'>
+							
+							<p style='font-size: 20px;'>Gate of Sounds is an Apostolic Centre for a Kingdomic Embassy; Equipping the body of Christ by heavenly sounds of Worship and wisdom Relevant for all spheres of Administration in keeping to God's times and seasons</p>
+							<p style='font-size: 20px;'>Gate of Sounds is an Apostolic Centre for a Kingdomic Embassy; Equipping the body of Christ by heavenly sounds of Worship and wisdom Relevant for all spheres of Administration in keeping to God's times and seasons</p>
+							
+						</div>
+						<div class='col-md-6'>
+							<img src="{% static 'sounds/goslogo1.jpg' %}"  class='img-responsive' height="250" width="450">
+						</div>
+					</div>
+				</div>
+			
+	<section id='three'>
+		<div id='threeInner' class="wow fadeInUp" data-wow-delay="0.3s" >
+			<span  style="font-family:Open Sans Condensed; font-size:30px">Quick Links
+				<span class="symbol-input100">
+					<i class="fa fa-arrow-circle-right" id='fa-touch2'></i>
+				</span>
+			</span><br><br>
+			<div class='row'>
+				<div class='col-sm-4' >
+					<div id='threeInner1'>
+						<img src='{% static "sounds/art1.jpg" %}' class='responsive'>
+						<p class='text-center'>Prophetic Aricles</p>
+					</div>
+				</div>
 
-    <div class='text-center' id='events'>
-            <hr style='border-color:#35424a; border-width: 3px'>
-            <h2 style="font-family: 'Tangerine', serif; font-size: 58px; color: #e8491d;">Upcoming Events</h2>
-            <p style="font-family: 'Ubuntu', serif; font-size: 30px;">No Events to Display</p>
-    </div>
+				<div class='col-sm-4'>
+					<div id='threeInner1'>
+						<img src='{% static "sounds/poems1.jpg" %}' class='responsive'>
+						<p class='text-center'>Prophetic Poems</p>
+					</div>
+				</div>
 
-    
+				<div class='col-sm-4' >
+					<div id='threeInner1'>
+						<img src='{% static "sounds/audio.jpg" %}'  class='responsive' >
+						<p class='text-center'>Audios</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+		
+	<section id='articles'>
+		<div id='articlesInner'>
+			<span  style="font-family:Open Sans Condensed; font-size:40px">Prophetic Articles</span><br><br>
+			
+			<div class='row'>
+				{% for posts in post %}
+				
+					<div class='col-sm-4' id='outerarticle'>
+						<div id='articleInner1'>
+							<img src='{% static "sounds/ink.png" %}'  class='responsive2' >
+							<span class='text-center'><h4>{{ posts.title }}</h4></span>
+							<div id='articleInner3'>
+								<div id='articleInner2'>
+									<p>{{ posts.body }}</p>
+								</div>
+								<button id='articleBut111'>Read More</button>
+							</div>
+						</div>
+					</div>
+				
+				{% endfor %}
+			</div>
+			
+			<div class='text-center'><button class='view_more'>View all</button></div>
+		</div>
+	</section>
+	
+	<section id='articles'>
+		<div id='articlesInner'>
+			<span  style="font-family:Open Sans Condensed; font-size:40px">Audios</span><br><br>
+			
+			<div class='row'>
+				{% for audios in audio %}
+				
+					<div class='col-sm-4' id='outerarticle'>
+						<div id='articleInner1'>
+							<img src='{% static "sounds/wave.png" %}'  class='responsive2' >
+							
+							<div id='articleInner3'>
+								<span><h4>{{ audios.title }}</h4></span>
+								<a href='{{audios.link}}' >
+									<button id='articleBut111' >Download
+										<span class="symbol-input100">
+											<i class="fa fa-download" id='fa-touch'></i>
+										</span>
+									</button>
+								</a>
+							</div>
+						</div>
+					</div>
+				
+				{% endfor %}
+			</div>
+			
+			<div class='text-center'><button class='view_more'>View all</button></div>
+		</div>
+	</section>
 
-  
-{% endblock %}
+	<section >
+
+	</section>
+
+	</section>
+<footer class='container-fluid text-center' id='afoot'>
+		<div class='row'>
+			<div class='col-sm-4'>
+				<h3>Contact Us</h3>
+				
+				<a href='#' ><h4 style='font-size: 18px'>Our Address and Contact Info Here</h4></a> 
+			</div>
+
+			<div class='col-sm-4'>
+				<h3>Connect with Us</h3>
+				<a href='#' class='fa fa-facebook'></a>
+				<a href='#' class='fa fa-twitter'></a>
+				<a href='#' class='fa fa-google'></a>
+				<a href='#' class='fa fa-youtube'></a>
+			</div>
+
+			<div class='col-sm-4'>
+				<img src="{% static 'sounds/star.jpeg' %}" height="100px" width="100px" >
+			</div>
+		</div>
+		<div class='bfoot'>
+				<hr style='border-color:#35424a; border-width:2px; '>
+				<p>Copyright 2018, Gate of Sounds</p>
+		</div>
+	</footer>
+
+	
+	<script type="text/javascript" src="{% static 'sounds/animations/js/mdb.min.js' %}"></script>
+    <script>
+            new WOW().init();
+        </script>
+	
+</body>
+</html>
+

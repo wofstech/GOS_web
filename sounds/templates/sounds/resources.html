@@ -1,0 +1,32 @@
+{% extends 'base_generic.html' %}
+
+
+{% block content %}
+{% load static %}
+{% load bootstrap3 %}
+<link rel='stylesheet' href='{% static "sounds/style.css" %}'>
+<div class='work'>
+        <strong></strong><h2 style="font-family: 'Tangerine', serif; font-size: 58px; color:#5E4485;">Articles</h2></strong>
+        {% for post in post %}
+                <div class='blogpost'>
+                    <h3><strong><a style="font-family: 'Ubuntu', serif; font-size: 20px;" href="{{ post.get_absolute_url }}">{{ post.title }}</strong></h3></a>
+                    <h4 style="font-family: 'Ubuntu:italic', serif; font-size: 20px;">{{ post.date }}</h4>
+                    
+                    
+                </div>
+        {% endfor %}
+        <a href='{% url "posts" %}'><button class='btn_1'>All articles</button></a>
+    </div>
+   <div style='width:80%; margin: auto;'> <hr style='border-color:#35424a;'></div>
+   <div  class='text-center' id='audio'>
+    <h2 style="font-family: 'Tangerine', serif; font-size: 58px; color: #e8491d;">Audios</h2>
+    <h3 ><a style="font-family: 'Ubuntu', serif; font-size: 20px;" href='#'>Altars and Throne Powers</a></h3>
+    <h3 ><a style="font-family: 'Ubuntu', serif; font-size: 20px;" href='#'>Benue Cry</a></h3>
+    <h3 ><a style="font-family: 'Ubuntu', serif; font-size: 20px;" href='#'>Systems of Princes in Benue</a></h3>
+    <h3 ><a style="font-family: 'Ubuntu', serif; font-size: 20px;" href='#'>Benue at 42</a></h3>
+    <h3 ><a style="font-family: 'Ubuntu', serif; font-size: 20px;" href='#'>Throne Worship</a></h3>
+    <button type='button' class='btn btn-default'>view more</button>
+    
+</div>
+{% endblock %}
+
