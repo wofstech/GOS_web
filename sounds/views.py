@@ -4,14 +4,26 @@ from sounds.forms import  SubForm, ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views import generic
+from . forms import Subme
+from django.contrib import messages
 
 def index(request):
     post = Post.objects.all()[:6]
     audio = AudioMessages.objects.all()[:6]
+    if request.method == 'POST': 
+        sub_form = Subme(request.POST )
+        if sub_form.is_valid():    
+            sub = sub_form.save(commit=False)
+            sub.save()
+            messages.success(request, 'Thanks for subscribing')
+            return redirect('index')           
+    else:        
+        sub_form = Subme()
     context = {
         'title': 'Recent Posts',
         'post': post,
-        'audio': audio
+        'audio': audio,
+        'sub_form': sub_form
     }
     return render(request, 'sounds/index.html', context)
 
@@ -41,10 +53,15 @@ def successView(request):
 
 class PostListView(generic.ListView):
     model = Post
-    paginate_by = 10
+    paginate_by = 12
 
 class PostDetailView(generic.DetailView):
     model = Post
+
+class AudioListView(generic.ListView):
+    model = AudioMessages
+    template_name = 'sounds/audio.html'
+    paginate_by = 12
 
 
 def resources(request):
@@ -53,3 +70,4 @@ def resources(request):
         'post': post,
     }
     return render(request, 'sounds/resources.html', context)
+

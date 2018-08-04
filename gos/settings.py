@@ -34,6 +34,9 @@ ALLOWED_HOSTS = ['boiling-beach-18440.herokuapp.com', '127.0.0.1']
 
 INSTALLED_APPS = [
     'bootstrap3',
+    'bootstrapform',
+    'widget_tweaks',
+    'dj_pagination',
     'sounds.apps.SoundsConfig',
     'django.contrib.admin',
     'django.contrib.auth',

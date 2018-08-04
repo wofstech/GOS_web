@@ -5,10 +5,14 @@
 {% load static %}
 {% load bootstrap3 %}
 <link rel='stylesheet' href='{% static "sounds/style.css" %}'>
-<div class='detail-container'>
-        <h3><strong>{{ post.title }}</strong></h3>
-        <h4><i>{{ post.date }}</i></h4>
-        <h4><i>Posted by {{ post.author }}</i></h4>
-        <p>{{ post.body }}</p>
+<section id='detail-post'>
+   
+    <div id='detail-post2'>
+        <div class='detail-container'>
+                <h3 style="font-family:Open Sans Condensed; font-size:45px"><strong>{{ post.title }}</strong></h3>
+                <h4><i>{{ post.date }}</i></h4><br>
+                <p>{{ post.body }}</p>
+        </div>
     </div>
+</section>
 {% endblock %}

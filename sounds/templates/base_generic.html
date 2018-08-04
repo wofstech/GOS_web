@@ -18,6 +18,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel='stylesheet' href='{% static "sounds/style.css" %}'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 
     
 </head>
@@ -35,9 +36,8 @@
                             <a  class='navbar-brand' style="font-family: 'Tangerine', serif; font-size: 48px; color:#ffffff;" href='{% url "index" %}'>Gate of Sounds</a>
                     </div>
                     <div class='collapse navbar-collapse'  id='MyNavBar'> 
-                        <ul class='nav navbar-nav navbar-right' style="font-size: 14px;">
+                        <ul class='nav navbar-nav navbar-right' style="font-size: 16px; padding-right:100px">
                             <li ><a href='#'>Home</a></li>
-                            <li><a href='#'>Resources</a></li>
                             <li><a href='#'>Contact</a></li>
                             <li><a href='#'>About</a></li>
                         </ul>
@@ -52,32 +52,13 @@
         {% endblock %}
         </div>
         
-        <footer class='container-fluid text-center' id='afoot'>
-                <div class='row'>
-                    <div class='col-sm-4'>
-                        <h3>Contact Us</h3>
-                       
-                      <a href='#' ><h4 style='font-size: 18px'>Our Address and Contact Info Here</h4></a> 
-                    </div>
-
-                    <div class='col-sm-4'>
-                        <h3>Connect with Us</h3>
-                        <a href='#' class='fa fa-facebook'></a>
-                        <a href='#' class='fa fa-twitter'></a>
-                        <a href='#' class='fa fa-google'></a>
-                        <a href='#' class='fa fa-youtube'></a>
-                    </div>
-
-                    <div class='col-sm-4'>
-                        <img src="{% static 'sounds/star.jpeg' %}" height="100px" width="100px" >
-                    </div>
-                </div>
-                <div class='bfoot'>
-                        <hr style='border-color:#35424a; border-width:2px; '>
-                        <p>Copyright 2018, Gate of Sounds</p>
-                </div>
+        <footer class='container-fluid text-center' id='afoot' >
+                <a  class='' style="font-family: 'Tangerine', serif; font-size: 48px; color:#ffffff;" href='{% url "index" %}'>Gate of Sounds</a><br>
+                <a href="#" class='footlinks1' style='color:#B5B5B5;'>Home</a>
+                <a href="#" class='footlinks1' style='color:#B5B5B5;'>About Us</a>
+                <a href="#" class='footlinks1' style='color:#B5B5B5;'>contact us</a><br><br>
+                <p  style='color:#B5B5B5; font-size:12px'>Copyright 2018, Gate of sounds</p>
             </footer>
-           
             
 </body>
 

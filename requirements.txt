@@ -4,3 +4,5 @@ django-bootstrap3
 gunicorn==19.7.1
 psycopg2==2.7.4
 whitenoise==3.3.1
+django-widget-tweaks==1.4.2 --hash=sha256:f9961162c8ed272162e22e5877d29c7780476970441dce605118ef66da685e71
+dj_pagination

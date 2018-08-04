@@ -5,7 +5,7 @@ body {
 
 .navbar{
     margin-bottom: 0;
-    background-color: #494e6b;
+    background-image:url('/static/sounds/cover3.jpg');
     color:#fff;
     padding:1%;
     font-size: 1.2em;
@@ -16,6 +16,8 @@ body {
     float: left;
     min-height: 55px;
 }
+
+
 
 
 
@@ -60,19 +62,29 @@ ul{
 .welcome{
     width: 80%;
     margin: auto;
-    text-align: left;  
+    text-align: left; 
+    padding-bottom: 30px; 
 }
 
 .showme{
+    
+    width:70%;
+    margin: auto;
+}
+
+.showme2{
+    width:70%;
+    margin: auto;
+}
+
+.welcome1{
     background: 
     /* top, transparent red */
     linear-gradient(
       rgba(255,255,255, 0.80),
       rgba(255,255,255, 0.80)
     ),
-    url("/static/sounds/world2.png");
-    width:70%;
-    margin: auto;
+    url("/static/sounds/world233.png");
 }
 
 
@@ -180,9 +192,11 @@ ul{
 }
 
 .detail-container{
-    width: 80%;
+    width: 90%;
     margin: auto;
-    padding: 30px;
+    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 footer {
@@ -235,6 +249,21 @@ padding: 40px;
     width: 80%;
     background: #f1f1f1;
   }
+
+form.example input::-webkit-input-placeholder{
+    text-align: center;
+}
+
+  form.subform input{
+    padding: 5px;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-radius: 5px;;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+
   
   /* Style the submit button */
   form.example button {
@@ -276,12 +305,16 @@ padding: 40px;
 
 .social-me{
     padding:20px;
-    
-    
+    height: 100px;
+    width:100px 
 }
 
 #entireshow{
     background: #d3d3d3;
+}
+
+.postShowcase{
+    background: red;
 }
 
 .butse{
@@ -301,12 +334,22 @@ padding: 40px;
     border-radius: 10px;
 }
 
+.responsive3{
+    width:100%;
+    height: auto;
+    border-radius: 10px;
+}
+
 #three{
     background: #f1f1f1;
 }
 
 #articles{
     background: #f1f1f1;
+}
+
+#articles2{
+    background:#f1f1f1;
 }
 
 #threeInner{
@@ -316,6 +359,11 @@ padding: 40px;
 
 #articlesInner{
     padding: 10px 30px 30px 30px;
+}
+
+#articlesInner2{
+    padding: 10px 30px 30px 30px;
+    
 }
 
 #threeInner1{
@@ -336,6 +384,10 @@ padding: 40px;
 }
 
 #outerarticle{
+    padding-bottom: 20px;
+}
+
+#outerarticle11{
     padding-bottom: 20px;
 }
 
@@ -367,6 +419,17 @@ padding: 40px;
 	padding:10px 70px;
 	margin:20px 3px 10px 3px;
 }
+.view_more2{
+    background: #3597D4;
+	background: -webkit-linear-gradient(#52A2D3 , #1887CC);
+	background: linear-gradient(#52A2D3 , #1887CC);
+	border:1px solid #3597D4;
+	color:#ffffff;
+	border-radius:3px;
+	font-size:14px;
+	padding:10px 70px;
+	margin:10px 3px 10px 3px;
+}
 
 #fa-touch{
     color:#767B89;
@@ -377,6 +440,55 @@ padding: 40px;
     color:#767B89;
 }
 
+
+
+#newsarea{
+    background: 
+      /* top, transparent red */
+      linear-gradient(
+        rgba(31,37,50, 0.90),
+        rgba(31,37,50, 0.90)
+      ),
+      url("/static/sounds/letter.jpg");
+      color: #ffffff;
+    min-height: 300px;
+    padding:50px;
+    
+}
+
+#newsarea2{
+    width:70%;
+}
+
+.footlinks1{
+    padding:20px;
+    color:#B5B5B5;
+    font-size: 12px;
+}
+
+#detail-post{
+    background: #d3d3d3;
+    padding-top:40px;
+    padding-bottom:40px;
+}
+
+#detail-post2{
+    background: #fff;
+    padding:50px;
+    width:70%;
+    margin:auto;
+    border-radius: 10px;
+    font-size: 18px;
+    
+}
+
+#imageside{
+    box-shadow: 20px 20px 20px 0px grey;
+}
+
+#aboutHouse{
+   padding-right: 50px;
+}
 @media (max-width:600px){
     .carousel-caption{
         display:none;
@@ -400,7 +512,83 @@ padding: 40px;
     .detail-container{
         width: 95%;
         margin: auto;
-        padding: 30px;
+        padding: 10px;
+    }
+
+    #showcase{
+        background-image:url('/static/sounds/cover3.jpg');
+        max-height: 600px;
+    }
+
+    #innershow{
+        padding: 100px 10px 50px 10px; 
+    }
+
+    .social-me{
+        padding:5px;
+        margin-top: 60px; 
+        height: 50px;
+        width:50px 
+    }
+
+    .searchme{
+        width:100%;
+        margin: auto;
+    }
+
+    .showme{
+
+        width:95%;
+        margin: auto;
+    }
+    
+    #imageside{
+        box-shadow: 20px 20px 20px 0px grey;
+        width:80%;
+        height:auto;
+        margin:auto;
+
+       
+    }
+
+    .welcome{
+        width: 90%;
+        margin: auto;
+        text-align: left; 
+        padding-bottom: 30px; 
+    }
+    #aboutHouse{
+        padding-right: 5px;
+     }
+
+     #outerarticle11{
+        padding-bottom: 30px;
+    }
+
+    #newsarea2{
+        width:95%;
+    }
+
+    form.subform input{
+        padding: 5px;
+        font-size: 17px;
+        border: 1px solid grey;
+        border-radius: 5px;;
+        float: left;
+        width: 100%;
+        background: #f1f1f1;
+    }
+
+    .view_more2{
+        background: #3597D4;
+        background: -webkit-linear-gradient(#52A2D3 , #1887CC);
+        background: linear-gradient(#52A2D3 , #1887CC);
+        border:1px solid #3597D4;
+        color:#ffffff;
+        border-radius:3px;
+        font-size:14px;
+        padding:10px 30px;
+        margin:10px 3px 10px 3px;
     }
     
 }

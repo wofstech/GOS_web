@@ -37,3 +37,6 @@ class Comment(models.Model):
 class AudioMessages(models.Model):
     title = models.CharField(max_length= 30)
     link = models.URLField(max_length=200)
+
+class Letter(models.Model):
+    subEmail = models.EmailField()

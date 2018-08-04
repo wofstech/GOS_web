@@ -3,6 +3,7 @@
 <html>
 <head>
 	{% load static %}
+	{% load widget_tweaks %}
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,7 +20,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="main.js"></script>
-	
+	<link href='{% static "sounds/animations/css/mdb.min.css" %}' rel="stylesheet">
 	<link rel='stylesheet' href='{% static "sounds/style.css" %}'>
 </head>
 <body>
@@ -35,9 +36,8 @@
 							<a  class='navbar-brand' style="font-family: 'Tangerine', serif; font-size: 48px; color:#ffffff;" href='{% url "index" %}'>Gate of Sounds</a>
 					</div>
 					<div class='collapse navbar-collapse'  id='MyNavBar'> 
-						<ul class='nav navbar-nav navbar-right' style="font-size: 20px; color:white">
+						<ul class='nav navbar-nav navbar-right' style="font-size: 15px; color:white; padding-right:100px">
 							<li ><a href='#'>Home</a></li>
-							<li><a href='#'>Resources</a></li>
 							<li><a href='#'>Contact</a></li>
 							<li><a href='#'>About</a></li>
 						</ul>
@@ -45,64 +45,82 @@
 			</div>
 		</nav>
 		
-				<div class ='text-center' id='innershow'>
-					<p class='search-text' style="font-family:Open Sans Condensed; font-size:35px">Are You Looking for a Particular Post? Search For a Post Below</p><br>
-					<div class='searchme'>
-						<form class="example" action="action_page.php">
-								<input type="text" placeholder="Search.." name="search">
-								<button type="submit" class='butse'><i class="fa fa-search"></i></button>
-						</form>
-						<br>
-						<img src='{% static "sounds/facebook.png" %}' class='social-me' height="100px" width="100px">
-						<img src='{% static "sounds/twitter.png" %}' class='social-me' height="100px" width="100px">
-						<img src='{% static "sounds/yt2.png" %}'class='social-me' height="100px" width="100px" >
-					</div>
-				</div>
-		
+		<div class ='text-center' id='innershow'>
+			
+			<p class='search-text' style="font-family:Open Sans Condensed; font-size:35px">Are You Looking for a Particular Post? Search For a Post Below</p><br>
+			<div class='searchme'>
+				<form class="example" action="action_page.php">
+						<input type="text" placeholder="Search.." name="search">
+						<button type="submit" class='butse'><i class="fa fa-search"></i></button>
+				</form>
+				<br>
+				<img src='{% static "sounds/facebook.png" %}' class='social-me'>
+				<img src='{% static "sounds/twitter.png" %}' class='social-me' >
+				<img src='{% static "sounds/yt2.png" %}'class='social-me'>
+				
+			</div>
+		</div>
+
 				
 	</section>
 	<section id='entireshow'>
 		<div class='showme'>
-		
+			<div class='welcome1'>
+				<br>
 				<div class='welcome' >
-					<p style="color:#666666; padding-top:15px; font-size:25px"   class='text-center'><strong>Welcome to Gate of Sounds</strong></p><br>
+						{% if messages %}
+						<div class="alert alert-success">
+							<p>    
+								{% for message in messages %}          
+									{{ message|safe }}          
+								{% endfor %}  
+							</p>
+						</div>                     
+					{% endif %}
+					<p style="color:#666666; padding-top:15px; font-family:Open Sans Condensed; font-size:40px"  class='text-center'><strong>Welcome to Gate of Sounds</strong></p><br>
 					<br>
-					<div class='row'>
-						<div class='col-md-6'>
-							
-							<p style='font-size: 20px;'>Gate of Sounds is an Apostolic Centre for a Kingdomic Embassy; Equipping the body of Christ by heavenly sounds of Worship and wisdom Relevant for all spheres of Administration in keeping to God's times and seasons</p>
-							<p style='font-size: 20px;'>Gate of Sounds is an Apostolic Centre for a Kingdomic Embassy; Equipping the body of Christ by heavenly sounds of Worship and wisdom Relevant for all spheres of Administration in keeping to God's times and seasons</p>
-							
-						</div>
-						<div class='col-md-6'>
-							<img src="{% static 'sounds/goslogo1.jpg' %}"  class='img-responsive' height="250" width="450">
+					<div class='row' >
+							<div class='col-md-6' id='aboutHouse'>
+								<div class="wow slideInLeft" data-wow-delay="0.3s">
+								<img src="{% static 'sounds/goslogo1.jpg' %}"  class='img-responsive'  id='imageside'>
+									<br><br>
+							</div>
+							</div>
+						<div class="wow slideInRight" data-wow-delay="0.7s">
+							<div class='col-md-6'>
+								<p style='font-size: 20px;'>Gate of Sounds is an Apostolic Centre for a Kingdomic Embassy; Equipping the body of Christ by heavenly sounds of Worship and wisdom Relevant for all spheres of Administration in keeping to God's times and seasons</p>
+								<p style='font-size: 20px;'>Gate of Sounds is an Apostolic Centre for a Kingdomic Embassy; Equipping the body of Christ by heavenly sounds of Worship and wisdom Relevant for all spheres of Administration in keeping to God's times and seasons</p>
+									
+							</div>
 						</div>
 					</div>
 				</div>
+			</div>
+	
 			
 	<section id='three'>
-		<div id='threeInner' class="wow fadeInUp" data-wow-delay="0.3s" >
+		<div id='threeInner' class="wow zoomInUp" data-wow-delay="0.5s" >
 			<span  style="font-family:Open Sans Condensed; font-size:30px">Quick Links
 				<span class="symbol-input100">
 					<i class="fa fa-arrow-circle-right" id='fa-touch2'></i>
 				</span>
 			</span><br><br>
 			<div class='row'>
-				<div class='col-sm-4' >
+				<div class='col-sm-4' id='outerarticle11'>
 					<div id='threeInner1'>
 						<img src='{% static "sounds/art1.jpg" %}' class='responsive'>
-						<p class='text-center'>Prophetic Aricles</p>
+						<p class='text-center'><a href='{% url "posts" %}'>Prophetic Aricles</a></p>
 					</div>
 				</div>
 
-				<div class='col-sm-4'>
+				<div class='col-sm-4' id='outerarticle11'>
 					<div id='threeInner1'>
 						<img src='{% static "sounds/poems1.jpg" %}' class='responsive'>
 						<p class='text-center'>Prophetic Poems</p>
 					</div>
 				</div>
 
-				<div class='col-sm-4' >
+				<div class='col-sm-4'id='outerarticle11' >
 					<div id='threeInner1'>
 						<img src='{% static "sounds/audio.jpg" %}'  class='responsive' >
 						<p class='text-center'>Audios</p>
@@ -111,12 +129,15 @@
 			</div>
 		</div>
 	</section>
-		
+	
+	
 	<section id='articles'>
 		<div id='articlesInner'>
 			<span  style="font-family:Open Sans Condensed; font-size:40px">Prophetic Articles</span><br><br>
+
 			
 			<div class='row'>
+				<div class="wow zoomInUp" data-wow-delay="0.5s" >
 				{% for posts in post %}
 				
 					<div class='col-sm-4' id='outerarticle'>
@@ -127,13 +148,15 @@
 								<div id='articleInner2'>
 									<p>{{ posts.body }}</p>
 								</div>
-								<button id='articleBut111'>Read More</button>
+								<button id='articleBut111'><a href="{{ posts.get_absolute_url }}" style='color:#636E7B;'>Read More</a></button>
 							</div>
 						</div>
 					</div>
 				
 				{% endfor %}
+				</div>
 			</div>
+
 			
 			<div class='text-center'><button class='view_more'>View all</button></div>
 		</div>
@@ -144,6 +167,7 @@
 			<span  style="font-family:Open Sans Condensed; font-size:40px">Audios</span><br><br>
 			
 			<div class='row'>
+				<div class="wow zoomInUp" data-wow-delay="0.5s" >
 				{% for audios in audio %}
 				
 					<div class='col-sm-4' id='outerarticle'>
@@ -151,7 +175,9 @@
 							<img src='{% static "sounds/wave.png" %}'  class='responsive2' >
 							
 							<div id='articleInner3'>
+								<div id='articleInner2'>
 								<span><h4>{{ audios.title }}</h4></span>
+								</div>
 								<a href='{{audios.link}}' >
 									<button id='articleBut111' >Download
 										<span class="symbol-input100">
@@ -164,42 +190,35 @@
 					</div>
 				
 				{% endfor %}
+				</div>
 			</div>
 			
 			<div class='text-center'><button class='view_more'>View all</button></div>
 		</div>
+		</section>
+		
 	</section>
-
-	<section >
-
-	</section>
-
-	</section>
-<footer class='container-fluid text-center' id='afoot'>
-		<div class='row'>
-			<div class='col-sm-4'>
-				<h3>Contact Us</h3>
-				
-				<a href='#' ><h4 style='font-size: 18px'>Our Address and Contact Info Here</h4></a> 
+	
+	<section class='wow fadeInUp' id='newsarea'>
+			<div id='newsarea1' >
+				<div id='newsarea2'>
+					<h3>Subscribe to our Newsletter</h3>
+					
+					<form method="POST" class="subform" >{% csrf_token %}
+					{% render_field sub_form.subEmail class="input100" name="pass" placeholder="Email" %}
+						<br><br>
+						<button class='view_more2' type="submit" style='font-size:15px'>Submit</button>
+					</form>
+				</div>
 			</div>
-
-			<div class='col-sm-4'>
-				<h3>Connect with Us</h3>
-				<a href='#' class='fa fa-facebook'></a>
-				<a href='#' class='fa fa-twitter'></a>
-				<a href='#' class='fa fa-google'></a>
-				<a href='#' class='fa fa-youtube'></a>
-			</div>
-
-			<div class='col-sm-4'>
-				<img src="{% static 'sounds/star.jpeg' %}" height="100px" width="100px" >
-			</div>
-		</div>
-		<div class='bfoot'>
-				<hr style='border-color:#35424a; border-width:2px; '>
-				<p>Copyright 2018, Gate of Sounds</p>
-		</div>
-	</footer>
+		</section>
+<footer class='container-fluid text-center' id='afoot' >
+	<a  class='' style="font-family: 'Tangerine', serif; font-size: 48px; color:#ffffff;" href='{% url "index" %}'>Gate of Sounds</a><br>
+	<a href="#" class='footlinks1' style='color:#B5B5B5;'>Home</a>
+	<a href="#" class='footlinks1' style='color:#B5B5B5;'>About Us</a>
+	<a href="#" class='footlinks1' style='color:#B5B5B5;'>contact us</a><br><br>
+	<p  style='color:#B5B5B5; font-size:12px'>Copyright 2018, Gate of sounds</p>
+</footer>
 
 	
 	<script type="text/javascript" src="{% static 'sounds/animations/js/mdb.min.js' %}"></script>
