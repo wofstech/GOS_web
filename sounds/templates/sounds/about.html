@@ -1,4 +1,5 @@
 
+
 {% extends 'base_generic.html' %}
 
 
@@ -7,18 +8,27 @@
 {% load bootstrap3 %}
 <link rel='stylesheet' href='{% static "sounds/style.css" %}'>
 
-<div class='container-about'>
-        <h2 style="font-family: 'Tangerine', serif; font-size: 50px; color:#e8491d; text-align:center;">About Us</h2>
-    <div class='row'>
-        <div class='col-md-6'>
-            
-            <p style='font-size: 20px;'>Gate of Sounds is an Apostolic Centre for a Kingdomic Embassy; Equipping the body of Christ by heavenly sounds of Worship and wisdom Relevant for all spheres of Administration in keeping to God's times and seasons</p>
-            <p style='font-size: 20px;'>Gate of Sounds is an Apostolic Centre for a Kingdomic Embassy; Equipping the body of Christ by heavenly sounds of Worship and wisdom Relevant for all spheres of Administration in keeping to God's times and seasons</p>
-            <p style='font-size: 20px;'>Gate of Sounds is an Apostolic Centre for a Kingdomic Embassy; Equipping the body of Christ by heavenly sounds of Worship and wisdom Relevant for all spheres of Administration in keeping to God's times and seasons</p>
+<section id='detail-post'>
+   
+        <div id='detail-post2'>
+            <div class='detail-container'>
+                    <h2 style="font-family: 'Open Sans Condensed', serif; font-size: 50px; color:#666666; text-align:center;">About Us</h2>
+                    <br>
+                <div class='row'>
+                    <div class='col-md-6'>
+                        <img src="{% static 'sounds/goslogo1.jpg' %}"  class='img-responsive' height="700" width="500">
+                        <br>
+                    </div>
+                    <div class='col-md-6'>
+                        <p style='font-size: 20px;'>Gate of Sounds is an Apostolic Centre for a Kingdomic Embassy; Equipping the body of Christ by heavenly sounds of Worship and wisdom Relevant for all spheres of Administration in keeping to God's times and seasons</p>
+                        <p style='font-size: 20px;'>Gate of Sounds is an Apostolic Centre for a Kingdomic Embassy; Equipping the body of Christ by heavenly sounds of Worship and wisdom Relevant for all spheres of Administration in keeping to God's times and seasons</p>
+                        <p style='font-size: 20px;'>Gate of Sounds is an Apostolic Centre for a Kingdomic Embassy; Equipping the body of Christ by heavenly sounds of Worship and wisdom Relevant for all spheres of Administration in keeping to God's times and seasons</p>
+                    </div>
+                    
+                </div>
+        
+            </div>
         </div>
-        <div class='col-md-6'>
-            <img src="{% static 'sounds/goslogo1.jpg' %}"  class='img-responsive' height="700" width="500">
-        </div>
-    </div>
-</div>
+    </section>
 {% endblock %}
+

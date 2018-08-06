@@ -37,9 +37,9 @@
 					</div>
 					<div class='collapse navbar-collapse'  id='MyNavBar'> 
 						<ul class='nav navbar-nav navbar-right' style="font-size: 15px; color:white; padding-right:100px">
-							<li ><a href='#'>Home</a></li>
-							<li><a href='#'>Contact</a></li>
-							<li><a href='#'>About</a></li>
+							<li ><a href='{% url "index" %}'>Home</a></li>
+							<li><a href='{% url "contact" %}'>Contact</a></li>
+							<li><a href='{% url "about" %}'>About</a></li>
 						</ul>
 					</div>
 			</div>
@@ -49,8 +49,8 @@
 			
 			<p class='search-text' style="font-family:Open Sans Condensed; font-size:35px">Are You Looking for a Particular Post? Search For a Post Below</p><br>
 			<div class='searchme'>
-				<form class="example" action="action_page.php">
-						<input type="text" placeholder="Search.." name="search">
+				<form method='get' action='{% url "searchme" %}' class="example" >
+						<input type='text' name='q' placeholder="Search" value='{{ request.get.q }}'>
 						<button type="submit" class='butse'><i class="fa fa-search"></i></button>
 				</form>
 				<br>
@@ -69,7 +69,7 @@
 				<br>
 				<div class='welcome' >
 						{% if messages %}
-						<div class="alert alert-success">
+						<div class="alert alert-success text-center">
 							<p>    
 								{% for message in messages %}          
 									{{ message|safe }}          
@@ -109,21 +109,21 @@
 				<div class='col-sm-4' id='outerarticle11'>
 					<div id='threeInner1'>
 						<img src='{% static "sounds/art1.jpg" %}' class='responsive'>
-						<p class='text-center'><a href='{% url "posts" %}'>Prophetic Aricles</a></p>
+						<p class='text-center'><a href='{% url "posts" %}' class='quickAnchor'>Prophetic Aricles</a></p>
 					</div>
 				</div>
 
 				<div class='col-sm-4' id='outerarticle11'>
 					<div id='threeInner1'>
 						<img src='{% static "sounds/poems1.jpg" %}' class='responsive'>
-						<p class='text-center'>Prophetic Poems</p>
+						<p class='text-center'><a href='#' class='quickAnchor'>Prophetic Poems</a></p>
 					</div>
 				</div>
 
 				<div class='col-sm-4'id='outerarticle11' >
 					<div id='threeInner1'>
 						<img src='{% static "sounds/audio.jpg" %}'  class='responsive' >
-						<p class='text-center'>Audios</p>
+						<p class='text-center'><a href='{% url "audios" %}' class='quickAnchor'>Audios</a></p>
 					</div>
 				</div>
 			</div>

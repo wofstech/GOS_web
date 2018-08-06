@@ -1,0 +1,72 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+{% load bootstrap3 %}
+{% load pagination_tags %}
+
+{% block content %}
+{% autopaginate results 9 %}
+
+<link rel='stylesheet' href='{% static "sounds/style.css" %}'>
+<div class='postShowcase'>
+    <section id='articles2'>
+        <div class='showme2'>
+            <div id='articlesInner2'>
+                <br><br>
+                <span  style="font-family:Open Sans Condensed; font-size:45px">search Results</span><br><br>
+                <div class='row'>
+                    <div class="wow zoomInUp" data-wow-delay="0.5s" >
+                    {% for post in results %}
+                    
+                        <div class='col-sm-4' id='outerarticle'>
+                            <div id='articleInner1'>
+                                <img src='{% static "sounds/ink.png" %}'  class='responsive2' >
+                                <span class='text-center'><h4>{{ post.title }}</h4></span>
+                                <div id='articleInner3'>
+                                    <div id='articleInner2'>
+                                        <p>{{ post.body }}</p>
+                                    </div>
+                                    <button id='articleBut111'><a href="{{ post.get_absolute_url }}" style='color:#636E7B;'>Read More</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
+                {% paginate %}
+
+                {% if is_paginated %}
+                    <div class="pagination">
+                        <span class="page-links">
+                            {% if page_obj.has_previous %}
+                                <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+                            {% endif %}
+                            <span class="page-current">
+                                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                            </span>
+                            {% if page_obj.has_next %}
+                                <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+                            {% endif %}
+                        </span>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+</div>
+
+
+{% endblock %}
+
+
+
+
+{% if results %}
+        <h3 style='margin-left:20px;'><strong>Search Results</h3></strong>
+        <br>
+            {% for element in results %}
+                
+                            {{ element.title }}</li>
+                            
+                  
+            {% endfor %}
+{% endif %}

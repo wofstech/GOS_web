@@ -11,6 +11,7 @@ urlpatterns = [
     path('audios/', views.AudioListView.as_view(), name='audios'),
     path('post/<int:pk>', views.PostDetailView.as_view(), name='post-detail'),
     path('resources', views.resources, name='resources'),
-    path('resources/<int:pk>', views.PostListView.as_view(), name='r-detail')
+    path('resources/<int:pk>', views.PostListView.as_view(), name='r-detail'),
+    path('result', views.search, name='searchme'),
 
 ]

@@ -40,3 +40,8 @@ class AudioMessages(models.Model):
 
 class Letter(models.Model):
     subEmail = models.EmailField()
+
+class Poems(models.Model):
+    title = models.CharField(max_length= 150)
+    body = models.TextField()
+    date = models.DateTimeField()

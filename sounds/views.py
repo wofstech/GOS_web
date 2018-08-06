@@ -6,6 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.views import generic
 from . forms import Subme
 from django.contrib import messages
+from django.db.models import Q
 
 def index(request):
     post = Post.objects.all()[:6]
@@ -53,7 +54,7 @@ def successView(request):
 
 class PostListView(generic.ListView):
     model = Post
-    paginate_by = 12
+    paginate_by = 1
 
 class PostDetailView(generic.DetailView):
     model = Post
@@ -71,3 +72,8 @@ def resources(request):
     }
     return render(request, 'sounds/resources.html', context)
 
+def search(request):
+    query = request.GET.get('q')
+    results = Post.objects.filter(Q(title__icontains=query) | Q(body__icontains=query) )
+
+    return render(request, 'sounds/searchme.html', {'results': results})
