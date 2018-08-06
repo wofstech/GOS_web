@@ -307,7 +307,8 @@ form.example input::-webkit-input-placeholder{
 .social-me{
     padding:20px;
     height: 100px;
-    width:100px 
+    width:100px ;
+    margin-top:50px;
 }
 
 #entireshow{
@@ -492,7 +493,120 @@ form.example input::-webkit-input-placeholder{
 }
 
 .quickAnchor{
-    color:#666666
+    color:#666666;
+}
+
+@media (min-width:601px) and (max-width:1040px) {
+    .carousel-caption{
+        display:none;
+    }
+
+    #icon{
+        max-width: 150px;
+    }
+
+    .contact-forms{
+        width:80%;
+        margin: auto;
+    }
+
+    .work{
+        width: 80%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .detail-container{
+        width: 95%;
+        margin: auto;
+        padding: 10px;
+    }
+
+    #showcase{
+        background-image:url('/static/sounds/cover3.jpg');
+        max-height: 700px;
+    }
+
+    #innershow{
+        padding: 150px 60px 50px 60px; 
+    }
+
+    .social-me{
+        padding:5px;
+        margin-top: 60px; 
+        height: 50px;
+        width:50px 
+    }
+
+    .searchme{
+        width:100%;
+        margin: auto;
+    }
+
+    .showme{
+
+        width:85%;
+        margin: auto;
+    }
+    
+    #imageside{
+        box-shadow: 20px 20px 20px 0px grey;
+        width:80%;
+        height:auto;
+        margin:auto;
+
+       
+    }
+
+    .welcome{
+        width: 90%;
+        margin: auto;
+        text-align: left; 
+        padding-bottom: 30px; 
+    }
+    #aboutHouse{
+        padding-right: 5px;
+     }
+
+     #outerarticle11{
+        padding-bottom: 30px;
+    }
+
+    #newsarea2{
+        width:95%;
+    }
+
+    form.subform input{
+        padding: 5px;
+        font-size: 17px;
+        border: 1px solid grey;
+        border-radius: 5px;;
+        float: left;
+        width: 100%;
+        background: #f1f1f1;
+    }
+
+    .view_more2{
+        background: #3597D4;
+        background: -webkit-linear-gradient(#52A2D3 , #1887CC);
+        background: linear-gradient(#52A2D3 , #1887CC);
+        border:1px solid #3597D4;
+        color:#ffffff;
+        border-radius:3px;
+        font-size:14px;
+        padding:10px 30px;
+        margin:10px 3px 10px 3px;
+    }
+
+    #detail-post2{
+        background: #fff;
+        padding:15px;
+        width:90%;
+        margin:auto;
+        border-radius: 10px;
+        font-size: 18px;  
+    }
+    
 }
 
 
