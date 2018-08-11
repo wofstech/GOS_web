@@ -24,6 +24,8 @@
 	<link rel='stylesheet' href='{% static "sounds/style.css" %}'>
 </head>
 <body>
+
+	<div class="preloader"></div>
 	<section id='showcase'>
 		<nav class='navbar navbar-inverse' style='background:transparent'>
 			<div class='container-fluid'>
@@ -224,7 +226,16 @@
 	<script type="text/javascript" src="{% static 'sounds/animations/js/mdb.min.js' %}"></script>
     <script>
             new WOW().init();
-        </script>
+		</script>
+	
+
+	<script>
+		$(document).ready(function() {
+  setInterval(function() {
+    $(".preloader").fadeOut("slow")
+  }, 3000);
+});
+	</script>
 	
 </body>
 </html>
