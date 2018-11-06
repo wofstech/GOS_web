@@ -105,6 +105,9 @@ ul{
 
   #showcase{
     background-image:url('/static/sounds/cover3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 	
   
 }
@@ -288,6 +291,8 @@ form.example input::-webkit-input-placeholder{
     background: #2196F3;
     color: white;
     font-size: 17px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
     border: 1px solid grey;
     border-left: none; /* Prevent double borders */
     cursor: pointer;
@@ -305,7 +310,7 @@ form.example input::-webkit-input-placeholder{
   }
 
   .searchme{
-      width:60%;
+      width:90%;
       margin: auto;
   }
 
