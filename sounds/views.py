@@ -54,7 +54,7 @@ def successView(request):
 
 class PostListView(generic.ListView):
     model = Post
-    paginate_by = 1
+    paginate_by = 6
 
 class PostDetailView(generic.DetailView):
     model = Post
